@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutProcess Suite">
+    <test name="Validate Form Test">
+        <classes>
+            <class name="test.ui.CheckoutPageTest"/>
+        </classes>
+    </test>
+    <test name="Complete Order Test">
+        <classes>
+            <class name="test.ui.SuccessfullyBuyItemTest"/>
+        </classes>
+    </test>
+</suite>
