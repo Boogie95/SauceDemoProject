@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest{
         loginPage.logIn("","secret_sauce");
         loginPage.verifyErrorMessage("Epic sadface: Username is required");
     }
-    @Test(dataProviderClass = TestData.class,dataProvider ="testPodaciValid")
+    @Test(dataProviderClass = TestData.class,dataProvider ="testDataValid")
     public void loginWithValidCredentials(String username,String password){
         ProductsPage productsPage=new ProductsPage(driver);
         loginPage.logIn(username,password);

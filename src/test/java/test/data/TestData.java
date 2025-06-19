@@ -3,7 +3,7 @@ package test.data;
 import org.testng.annotations.DataProvider;
 
 public class TestData {
-    @DataProvider(name="testPodaciValid")
+    @DataProvider(name="testDataValid")
     public Object[][] loginDataValid(){
         return new Object[][]{
                 {"standard_user", "secret_sauce"},

@@ -15,6 +15,7 @@ public class ProductsPage extends BasePage {
         super(driver);
     }
     By productSortContainer = By.xpath("//select");
+    By inventoryItemBy = By.xpath("//div[@class='inventory_item']");
 
     public void selectSortOption(String option){
         click(productSortContainer);
@@ -22,7 +23,7 @@ public class ProductsPage extends BasePage {
     }
 
     public List<Double> getSortedPrices(){
-        List<WebElement> elementList = driver.findElements(By.xpath("//div[@class='inventory_item_price']"));
+        List<WebElement> elementList = driver.findElements(By.xpath("inventory_item_price"));
         List<Double> prices = new ArrayList<>();
         for(WebElement priceElement : elementList){
             prices.add(getPriceAsDouble(priceElement));
@@ -31,7 +32,7 @@ public class ProductsPage extends BasePage {
     }
 
     public List<String> getSortedNames(){
-        List<WebElement> elementList = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));
+        List<WebElement> elementList = driver.findElements(inventoryItemBy);
         List<String> names = new ArrayList<>();
         for(WebElement nameElement : elementList){
             names.add(nameElement.getText());
@@ -73,7 +74,7 @@ public class ProductsPage extends BasePage {
     }
 
     public String addRandomElementToCart() {
-        List<WebElement> elementList = driver.findElements(By.xpath("//div[@class='inventory_item']"));
+        List<WebElement> elementList = driver.findElements(inventoryItemBy);
         if (elementList.isEmpty()) {
             throw new SkipException("Empty list");
         }

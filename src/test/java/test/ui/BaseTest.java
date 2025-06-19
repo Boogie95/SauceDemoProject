@@ -16,7 +16,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup(){
         WebDriverManager.edgedriver().setup();
-        driver=new EdgeDriver(new EdgeOptions().addArguments("--start-maximized").addArguments("--headless"));
+        driver=new EdgeDriver(new EdgeOptions().addArguments("--start-maximized"));
         driver.get(url);
         loginPage=new LoginPage(driver);
     }
