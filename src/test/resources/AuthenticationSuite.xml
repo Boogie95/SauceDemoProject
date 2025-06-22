@@ -4,7 +4,7 @@
     <test name="Login Tests">
         <classes>
             <class name="test.ui.LoginTest"/>
-            <class name="test.ui.LoginUnsuccessfulTest"/>
+            <class name="test.ui.LoginSuccessfulTest"/>
         </classes>
     </test>
     <test name="Logout Tests">

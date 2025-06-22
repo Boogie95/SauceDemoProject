@@ -2,7 +2,7 @@ package test.ui;
 
 import org.testng.annotations.Test;
 
-public class LoginUnsuccessfulTest extends BaseTest{
+public class LoginSuccessfulTest extends BaseTest{
     @Test
     public void loginEmptyUsernameTest(){
         loginPage.logIn("","secret_sauce");
