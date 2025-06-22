@@ -31,5 +31,16 @@ public class TestData {
                 {"Jovan", "Bundalo", "", "Error: Postal Code is required"}
         };
     }
+    @DataProvider(name = "logoutUsers")
+    public Object[][] logoutUsers() {
+        return new Object[][]{
+                {"standard_user", "secret_sauce"},
+                {"performance_glitch_user", "secret_sauce"},
+                {"problem_user", "secret_sauce"},
+                {"visual_user", "secret_sauce"},
+                {"error_user", "secret_sauce"}
+        };
+    }
+
 
 }
