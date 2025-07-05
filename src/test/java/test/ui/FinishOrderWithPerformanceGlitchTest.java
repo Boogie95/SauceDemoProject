@@ -7,9 +7,10 @@ import pages.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SuccessfullyBuyItemTest extends BaseTestWithStandardLogin {
+public class FinishOrderWithPerformanceGlitchTest extends BaseTest{
     @Test
-    public void orderAnyItemTest(){
+    public void orderAnyItemPerformanceUserTest() {
+        loginPage.logIn("performance_glitch_user", "secret_sauce");
         ProductsPage productsPage = new ProductsPage(driver);
         CartPage cartPage = new CartPage(driver);
         Header header = new Header(driver);
@@ -17,12 +18,8 @@ public class SuccessfullyBuyItemTest extends BaseTestWithStandardLogin {
         CheckoutOverviewPage checkoutOverview=new CheckoutOverviewPage(driver);
         CheckoutCompletePage checkoutComplete=new CheckoutCompletePage(driver);
 
-
-
         List<String> expectedItems = new ArrayList<>();
         expectedItems.add(productsPage.addRandomElementToCart());
-        productsPage.addBoltTShirtToCart();
-        expectedItems.add("Sauce Labs Bolt T-Shirt");
 
         header.clickOnCart();
 

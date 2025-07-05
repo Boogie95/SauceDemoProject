@@ -57,8 +57,11 @@ public class BasePage {
         String actualText = getTextFromElement(elementLocator);
         Assert.assertEquals(actualText, expectedText);
     }
-
     public boolean isElementDisplayed(By element) {
         return driver.findElement(element).isDisplayed();
+    }
+    public boolean isAlertDisplayed(int seconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        return wait.until(ExpectedConditions.alertIsPresent()) != null;
     }
 }

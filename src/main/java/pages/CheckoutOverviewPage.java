@@ -2,6 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CheckoutOverviewPage extends BasePage{
 
@@ -11,8 +15,14 @@ public class CheckoutOverviewPage extends BasePage{
     public CheckoutOverviewPage(WebDriver driver) {
         super(driver);
     }
-    public String verifyImOnCheckoutOverviewWithSelectedItem(){
-        return getTextFromElement(inventoryItemName);
+    public List<String> getAllCartItemNames() {
+        waitForElementToBeVisible(inventoryItemName);
+        List<WebElement> items = driver.findElements(inventoryItemName);
+        List<String> names = new ArrayList<>();
+        for (WebElement item : items) {
+            names.add(item.getText());
+        }
+        return names;
     }
     public void finishOrder(){ click(finishingOrderButton);}
 }

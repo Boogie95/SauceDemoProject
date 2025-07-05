@@ -9,6 +9,7 @@
     <test name="Complete Order Test">
         <classes>
             <class name="test.ui.SuccessfullyBuyItemTest"/>
+            <class name="test.ui.FinishOrderWithPerformanceGlitchTest"/>
         </classes>
     </test>
 </suite>

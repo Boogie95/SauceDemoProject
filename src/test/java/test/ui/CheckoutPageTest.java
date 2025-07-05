@@ -1,6 +1,6 @@
 package test.ui;
 
-import org.testng.annotations.DataProvider;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.CheckoutPage;
@@ -8,7 +8,10 @@ import pages.Header;
 import pages.ProductsPage;
 import test.data.TestData;
 
-public class CheckoutPageTest extends BaseTestWithLogin{
+import java.util.ArrayList;
+import java.util.List;
+
+public class CheckoutPageTest extends BaseTestWithStandardLogin {
 
     @Test(dataProviderClass = TestData.class,dataProvider ="testInvalidFillForm")
     public void invalidFillInfo(String firstName,String lastName,String zip,String errorMessage){
@@ -17,7 +20,6 @@ public class CheckoutPageTest extends BaseTestWithLogin{
         Header header=new Header(driver);
         CartPage cartPage=new CartPage(driver);
 
-        productsPage.addRandomElementToCart();
         header.clickOnCart();
         cartPage.clickOnCheckoutButton();
 

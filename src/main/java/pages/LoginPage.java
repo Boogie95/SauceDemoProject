@@ -17,6 +17,7 @@ public class LoginPage extends BasePage{
     By loginCredentials=(By.xpath("//h4[contains(text(),'usernames')]"));
 
 
+
     public void logIn(String username,String pass){
         insertText(usernameField,username);
         insertText(passwordField,pass);
@@ -30,6 +31,7 @@ public class LoginPage extends BasePage{
     public void verifyImOnLoginPage(){
         assertElementText(loginCredentials,"Accepted usernames are:");
     }
+
 
 
 

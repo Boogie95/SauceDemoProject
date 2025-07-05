@@ -1,11 +1,9 @@
 package test.ui;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.BasePage;
 
-public class BaseTestWithLogin extends BaseTest {
+public class BaseTestWithStandardLogin extends BaseTest {
 
     @BeforeMethod
     public void setup(){

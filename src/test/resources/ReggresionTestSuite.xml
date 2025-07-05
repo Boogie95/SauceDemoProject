@@ -5,5 +5,6 @@
         <suite-file path="AuthenticationSuite.xml"/>
         <suite-file path="ProductsPageSuite.xml"/>
         <suite-file path="CheckoutProcessSuite.xml"/>
+        <suite-file path="CartSuite.xml"/>
     </suite-files>
 </suite>
